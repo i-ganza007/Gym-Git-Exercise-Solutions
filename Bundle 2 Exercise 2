@@ -1,0 +1,242 @@
+ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ ls
+Bundle-1-/  bundle1.py  services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ vim services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git add --all
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git commit -m "Adding changes to the services for for bundle 2 exercise 2"
+[ft/service-redesign 843c615] Adding changes to the services for for bundle 2 exercise 2
+ 1 file changed, 1 deletion(-)
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git push -u origin main
+Everything up-to-date
+branch 'main' set up to track 'origin/main'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ cat services.htm
+cat: services.htm: No such file or directory
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ cat services.html
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Hello World!</title>
+<link rel="stylesheet" href="bluestyle.css">
+</head>
+<body>
+
+<h1>Hello world!</h1>
+<p>This is the services file.</p>
+
+</body>
+</html>
+New line to services
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ vim services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git add services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git status
+On branch ft/service-redesign
+nothing to commit, working tree clean
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git push -u origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 310 bytes | 103.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/i-ganza007/Bundle-1-/pull/new/ft/service-redesign
+remote:
+To github.com:i-ganza007/Bundle-1-.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ls
+Bundle-1-/  bundle1.py  services.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ vim services.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git add --all
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ vim services.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git add --all
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git commit -m "Commiting from the main branch of the Bundle 2 Exercise 2"
+[main df72430] Commiting from the main branch of the Bundle 2 Exercise 2
+ 1 file changed, 1 deletion(-)
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 310 bytes | 155.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:i-ganza007/Bundle-1-.git
+   7dce98b..df72430  main -> main
+branch 'main' set up to track 'origin/main'.
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git checkout -b ft/service-redesign
+fatal: a branch named 'ft/service-redesign' already exists
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git checkout  ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ ls
+Bundle-1-/  bundle1.py  services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git diff
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ cat services.html
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Hello World!</title>
+<link rel="stylesheet" href="bluestyle.css">
+</head>
+<body>
+
+<h1>Hello world!</h1>
+<p>This is the services file.</p>
+
+</body>
+</html>
+New line to services
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git checkout  main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ls
+Bundle-1-/  bundle1.py  services.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ cat services.html
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Hello World!</title>
+<link rel="stylesheet" href="bluestyle.css">
+</head>
+<body>
+
+<h1>Hello world!</h1>
+<p>This is the services file.</p>
+
+</body>
+</html>
+New line to services
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git diff
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git checkout  ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git branch
+  dev
+  ft/bundle-2
+* ft/service-redesign
+  main
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git diff main..ft/service-redesign
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git checkout  ft/service-redesign
+Already on 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ vim services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git add --all
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git commit -m "Commited to this branch to change stuff"
+[ft/service-redesign fa5a39a] Commited to this branch to change stuff
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git push -u origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:i-ganza007/Bundle-1-.git
+   843c615..fa5a39a  ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git diff
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git diff main..ft/service-redesign
+diff --git a/services.html b/services.html
+index 8523465..301acd6 100644
+--- a/services.html
++++ b/services.html
+@@ -8,7 +8,7 @@
+
+ <h1>Hello world!</h1>
+ <p>This is the services file.</p>
+-
++<h1>Diego Dalot & Cincinatti</h1>
+ </body>
+ </html>
+ New line to services
+
+HP@ian MINGW32 ~/Bundle1 (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+
+hint: Waiting for your editor to close the file.
+[main 19b6199] Merge branch 'ft/service-redesign
