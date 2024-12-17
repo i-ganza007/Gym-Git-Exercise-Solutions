@@ -1,0 +1,80 @@
+git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ vim services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ git add --all
+warning: in the working copy of 'services.html', LF will be replaced by CRLF the next time Git touches it
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ echo "New line to services" >> services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ cat services.html
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Hello World!</title>
+<link rel="stylesheet" href="bluestyle.css">
+</head>
+<body>
+
+<h1>Hello world!</h1>
+<p>This is the services file.</p>
+<p>A new line in our file!</p>
+
+</body>
+</html>
+New line to services
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ git add --all
+warning: in the working copy of 'services.html', LF will be replaced by CRLF the next time Git touches it
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ git commit -m "Bundle 2 exercises 1 commit"
+[ft/bundle-2 684b1d8] Bundle 2 exercises 1 commit
+ 1 file changed, 15 insertions(+)
+ create mode 100644 services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ git push
+fatal: The current branch ft/bundle-2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/bundle-2
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ git push -u ft/bundle-2 main
+fatal: 'ft/bundle-2' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ git push -u origin main
+Everything up-to-date
+branch 'main' set up to track 'origin/main'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/bundle-2)
+$ git push -u origin ft/bundle-2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 488 bytes | 122.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/i-ganza007/Bundle-1-/pull/new/ft/bundle-2
+remote:
+To github.com:i-ganza007/Bundle-1-.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
