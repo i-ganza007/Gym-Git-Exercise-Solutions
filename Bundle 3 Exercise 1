@@ -1,0 +1,475 @@
+```bash
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ vim team.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ echo "<p>Adding some changes to the file</p>" >> team.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ git add --all
+warning: in the working copy of 'team.html', LF will be replaced by CRLF the next time Git touches it
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ git commit -m "Commiting the team file"
+[ft/team-page c006523] Commiting the team file
+ 1 file changed, 25 insertions(+)
+ create mode 100644 team.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ git push -u origin ft/team-page
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 2.47 KiB | 841.00 KiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/i-ganza007/Bundle-1-/pull/new/ft/team-page
+remote:
+To github.com:i-ganza007/Bundle-1-.git
+ * [new branch]      ft/team-page -> ft/team-page
+branch 'ft/team-page' set up to track 'origin/ft/team-page'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ git log
+commit c006523456a0904d04c5fa7f103b0c54700906bc (HEAD -> ft/team-page, origin/ft/team-page)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 12:29:25 2024 +0200
+
+    Commiting the team file
+
+commit 19b6199ab91fe9e6882e5263e264dfd78a2ca1d7 (main, ft/contact-page)
+Merge: df72430 fa5a39a
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 12:04:50 2024 +0200
+
+    Merge branch 'ft/service-redesign'
+
+commit fa5a39a64540004ef8d0e78f17d1e5d758516a71 (origin/ft/service-redesign, ft/service-redesign)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 11:59:07 2024 +0200
+
+    Commited to this branch to change stuff
+
+commit df724301097f022bb66cca7678e26b51b954eccc (origin/main)
+:
+commit c006523456a0904d04c5fa7f103b0c54700906bc (HEAD -> ft/team-page, origin/ft/team-page)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 12:29:25 2024 +0200
+
+    Commiting the team file
+
+commit 19b6199ab91fe9e6882e5263e264dfd78a2ca1d7 (main, ft/contact-page)
+Merge: df72430 fa5a39a
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 12:04:50 2024 +0200
+
+    Merge branch 'ft/service-redesign'
+
+commit fa5a39a64540004ef8d0e78f17d1e5d758516a71 (origin/ft/service-redesign, ft/service-redesign)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 11:59:07 2024 +0200
+
+    Commited to this branch to change stuff
+
+commit df724301097f022bb66cca7678e26b51b954eccc (origin/main)
+
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ git cherry-pick fa5a39a64540004ef8d0e78f17d1e5d758516a71
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+error: could not apply fa5a39a... Commited to this branch to change stuff
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git cherry-pick --continue".
+hint: You can instead skip this commit with "git cherry-pick --skip".
+hint: To abort and get back to the state before "git cherry-pick",
+hint: run "git cherry-pick --abort".
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page|CHERRY-PICKING)
+$ ^C
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page|CHERRY-PICKING)
+$ git cherry-pick fa5a39a
+error: Cherry-picking is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: cherry-pick failed
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page|CHERRY-PICKING)
+$ git checkout ft/team-page
+error: you need to resolve your current index first
+services.html: needs merge
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page|CHERRY-PICKING)
+$ ^C
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page|CHERRY-PICKING)
+$ git status
+On branch ft/contact-page
+You are currently cherry-picking commit fa5a39a.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   services.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page|CHERRY-PICKING)
+$ git add --all
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page|CHERRY-PICKING)
+$ git status
+On branch ft/contact-page
+You are currently cherry-picking commit fa5a39a.
+hint: Waiting for your editor to close the file.[ft/contact-page 80fc97f] Commited to this branch to change stuff
+ Date: Tue Dec 17 11:59:07 2024 +0200
+ 1 file changed, 4 insertions(+)
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ ^C
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ git log --oneline
+80fc97f (HEAD -> ft/contact-page) Commited to this branch to change stuff
+19b6199 (main) Merge branch 'ft/service-redesign'
+fa5a39a (origin/ft/service-redesign, ft/service-redesign) Commited to this branch to change stuff
+df72430 (origin/main) Commiting from the main branch of the Bundle 2 Exercise 2
+843c615 Adding changes to the services for for bundle 2 exercise 2
+7dce98b Merge pull request #1 from i-ganza007/ft/bundle-2
+684b1d8 (origin/ft/bundle-2, ft/bundle-2) Bundle 2 exercises 1 commit
+7933eab (dev) Adding Bundle 1 first commit
+af85a83 Created the first bundle1 commit
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ ls
+Bundle-1-/  bundle1.py  services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ vim services.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ git add --all
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ git commit -a -m "Comming for the bundle 3 Exercise 1"
+[ft/contact-page 74c0ba5] Comming for the bundle 3 Exercise 1
+ 1 file changed, 1 insertion(+)
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ git push -u origin ft/contact-page
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 783 bytes | 391.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/i-ganza007/Bundle-1-/pull/new/ft/contact-page
+remote:
+To github.com:i-ganza007/Bundle-1-.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/contact-page)
+$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+
+HP@ian MINGW32 ~/Bundle1 (ft/faq-page)
+$ vim faq.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/faq-page)
+$ git add --all
+warning: in the working copy of 'faq.html', LF will be replaced by CRLF the next time Git touches it
+
+HP@ian MINGW32 ~/Bundle1 (ft/faq-page)
+$ git status
+On branch ft/faq-page
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   faq.html
+
+
+HP@ian MINGW32 ~/Bundle1 (ft/faq-page)
+$ git commit -m "Commiting from a new branch faq file"
+[ft/faq-page 101ae2b] Commiting from a new branch faq file
+ 1 file changed, 19 insertions(+)
+ create mode 100644 faq.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/faq-page)
+$ git push -u origin ft/faq-page
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.33 KiB | 169.00 KiB/s, done.
+Total 9 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/i-ganza007/Bundle-1-/pull/new/ft/faq-page
+remote:
+To github.com:i-ganza007/Bundle-1-.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/faq-page)
+$ git checkout -b ft/team-page
+fatal: a branch named 'ft/team-page' already exists
+
+HP@ian MINGW32 ~/Bundle1 (ft/faq-page)
+$ git checkout  ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        #main-photo{
+            max-width: 280px;
+            border-radius: 10px;
+        }
+        .outer-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .order-container{
+            display: flex;
+            border: 1.3px solid;
+            max-width: 187px;
+            text-align: center;
+            justify-content: center;
+            gap: 7px;
+            border-radius: 30px;
+</html>:q>div> id="price">$6.50</p></h2> Cart</p
+bash: !DOCTYPE: event not found
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: *{: command not found
+bash: font-family:: command not found
+bash: syntax error near unexpected token `}'
+bash: max-width:: command not found
+bash: border-radius:: command not found
+bash: syntax error near unexpected token `}'
+bash: .outer-container{: command not found
+bash: display:: command not found
+bash: flex-direction:: command not found
+
+bash: syntax error near unexpected token `}'
+
+bash: .order-container{: command not found
+
+
+bash: display:: command not found
+bash: text-align:: command not found
+bash: gap:: command not foundnd not found
+bash: border-radius:: command not found
+bash: outline:: command not found
+bash: position:: command not found
+bash: left:: command not found
+bash: bottom:: command not found
+bash: opacity:: command not found
+bash: background-color:: command not found
+bash: margin-bottom:: command not found
+
+bash: syntax error near unexpected token `}'
+bash: font-weight:: command not found
+bash: syntax error near unexpected token `}'
+bash: color:: command not found
+bash: syntax error near unexpected token `}'
+bash: syntax error near unexpected token `('
+bash: font-weight:: command not found
+bash: syntax error near unexpected token `}'
+
+
+
+
+
+bash: .text-content{: command not found
+bash: max-height:: command not found
+bash: syntax error near unexpected token `}'
+bash: .text-content: command not found
+
+bash: margin-top:-0.5rem: command not found
+bash: margin-bottom:: command not found
+bash: syntax error near unexpected token `}'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+ash: syntax error near unexpected token `newline'
+ash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+;bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+;bash: syntax error near unexpected token `newline'
+bash: syntax error near unexpected token `newline'
+;bash: syntax error near unexpected token `newline'
+
+bash: syntax error near unexpected token `newline'
+qbash: syntax error near unexpected token `newline'
+bash: /html: No such file or directory
+q
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ ^[;;;;;q
+bash: syntax error near unexpected token `;;'
+q
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ qqq
+bash: qqq: command not found
+
+q
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ qq
+bash: qq: command not found
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ git cherry-pick
+usage: git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff]
+                       [-S[<keyid>]] <commit>...
+   or: git cherry-pick (--continue | --skip | --abort | --quit)
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    -x                    append commit name
+    --ff                  allow fast-forward
+    --allow-empty         preserve initially empty commits
+    --allow-empty-message
+                          allow commits with empty messages
+    --keep-redundant-commits
+                          keep redundant, empty commits
+
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ git log
+commit c006523456a0904d04c5fa7f103b0c54700906bc (HEAD -> ft/team-page, origin/ft/team-page)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 12:29:25 2024 +0200
+
+    Commiting the team file
+
+commit 19b6199ab91fe9e6882e5263e264dfd78a2ca1d7 (main)
+Merge: df72430 fa5a39a
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 12:04:50 2024 +0200
+
+    Merge branch 'ft/service-redesign'
+
+commit fa5a39a64540004ef8d0e78f17d1e5d758516a71 (origin/ft/service-redesign, ft/service-redesign)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 11:59:07 2024 +0200
+
+    Commited to this branch to change stuff
+
+commit df724301097f022bb66cca7678e26b51b954eccc
+(origin/main)
+:
+commit c006523456a0904d04c5fa7f103b0c54700906bc (HEAD -> ft/team-page, origin/ft/team-page)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 12:29:25 2024 +0200
+
+    Commiting the team file
+
+commit 19b6199ab91fe9e6882e5263e264dfd78a2ca1d7 (main)
+Merge: df72430 fa5a39a
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 12:04:50 2024 +0200
+
+    Merge branch 'ft/service-redesign'
+
+commit fa5a39a64540004ef8d0e78f17d1e5d758516a71 (origin/ft/service-redesign, ft/service-redesign)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 11:59:07 2024 +0200
+
+    Commited to this branch to change stuff
+
+commit df724301097f022bb66cca7678e26b51b954eccc (origin/main)
+Author: i-ganza007 <i.ganza@alustudent.com>
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$
+q
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+hint: Waiting for your editor to close the file.[ft/team-page 817b688] Revert "Commiting the team file"
+ 1 file changed, 25 deletions(-)
+ delete mode 100644 team.html
+
+HP@ian MINGW32 ~/Bundle1 (ft/team-page)
+$ git push origin ft/team-page
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 253 bytes | 84.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:i-ganza007/Bundle-1-.git
+   c006523..817b688  ft/team-page -> ft/team-pag
+```
