@@ -343,6 +343,408 @@ HP@ian MINGW32 ~/Bundle1 (dev)
 $ git branch -d test
 Deleted branch test (was 7933eab).
 ```
+# Bundle 1 Exercise 2
+```bash
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git checkout dev
+Switched to branch 'dev'
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ ls
+Bundle-1-/  bundle1.py
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ touch home.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ ls
+Bundle-1-/  bundle1.py  home.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ vim home.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status --short
+?? home.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ vim home.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status --short
+?? home.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+#On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git add --all
+warning: in the working copy of 'home.html', LF will be replaced by CRLF the next time Git touches it
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   home.html
+
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ vim home.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   home.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash save "Stashing the changes of the home html"
+warning: in the working copy of 'home.html', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state On dev: Stashing the changes of the home html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ vim about.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git add --a;;
+bash: syntax error near unexpected token `;;'
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git add --all
+warning: in the working copy of 'about.html', LF will be replaced by CRLF the next time Git touches it
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ vim about.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git diff
+warning: in the working copy of 'about.html', LF will be replaced by CRLF the next time Git touches it
+diff --git a/about.html b/about.html
+index 2943159..0a0c849 100644
+--- a/about.html
++++ b/about.html
+@@ -6,10 +6,7 @@
+ <body>
+
+ <h1>This is a About  page</h1>
+-<p>Common bro is lame</p>
++<p>Common cook is lame</p>
+ <p>Copying is sorry</p>
+ </body>
+ </html>
+-
+-
+-
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash save "Stashing the changes of the about html living"
+warning: in the working copy of 'about.html', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state On dev: Stashing the changes of the about html living
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ vim team.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git add --all
+warning: in the working copy of 'team.html', LF will be replaced by CRLF the next time Git touches it
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ vim team.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git diff
+warning: in the working copy of 'team.html', LF will be replaced by CRLF the next time Git touches it
+diff --git a/team.html b/team.html
+index d76b382..2bb6e84 100644
+--- a/team.html
++++ b/team.html
+@@ -7,7 +7,7 @@
+
+ <h1>This is a Team  page</h1>
+ <p>Common bro is teaming</p>
+-<p>Copying is sorry</p>
++<p>Copying is</p>
+ </body>
+ </html>
+
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash save "Stashing the changes of the twam html live"
+warning: in the working copy of 'team.html', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state On dev: Stashing the changes of the twam html live
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash list
+stash@{0}: On dev: Stashing the changes of the twam html live
+stash@{1}: On dev: Stashing the changes of the about html living
+stash@{2}: On dev: Stashing the changes of the home html
+stash@{3}: WIP on dev: 7933eab Adding Bundle 1 first commit
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash show -p stash@{1}
+diff --git a/about.html b/about.html
+new file mode 100644
+index 0000000..0a0c849
+--- /dev/null
++++ b/about.html
+@@ -0,0 +1,12 @@
++<!DOCTYPE html>
++<html>
++<head>
++<title>Page Title</title>
++</head>
++<body>
++
++<h1>This is a About  page</h1>
++<p>Common cook is lame</p>
++<p>Copying is sorry</p>
++</body>
++</html>
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (b6045611d715a729ee3fdb9152f51859d0fad03b)
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash pop stash@{2}
+Auto-merging about.html
+CONFLICT (add/add): Merge conflict in about.html
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   home.html
+        new file:   team.html
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both added:      about.html
+
+The stash entry is kept in case you need it again.
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ ^C
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ cat about.html
+<<<<<<< Updated upstream
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a About  page</h1>
+<p>Common cook is lame</p>
+<p>Copying is sorry</p>
+</body>
+</html>
+=======
+<!DOCTYPE>
+<html>
+<head>
+<title>Wagwaan</title>
+</head>
+<body>
+<h1>About Page</h1>
+<p>This is an about page</p>
+</body>
+</html>
+Bomboclat
+>>>>>>> Stashed changes
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ vim about.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git add about.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+        new file:   team.html
+
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ cat team.html
+No time to code but this is the plain text html file
+Bomboclat
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+        new file:   team.html
+
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git commit -m "Commiting the old files from stash"
+[dev 0dfe2f7] Commiting the old files from stash
+ 3 files changed, 32 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+ create mode 100644 team.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git push -u origin dev
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 865 bytes | 288.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/i-ganza007/Bundle-1-/pull/new/dev
+remote:
+To github.com:i-ganza007/Bundle-1-.git
+ * [new branch]      dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash pop stash@{0}
+Auto-merging team.html
+CONFLICT (add/add): Merge conflict in team.html
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both added:      team.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+The stash entry is kept in case you need it again.
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ cat team.html
+<<<<<<< Updated upstream
+No time to code but this is the plain text html file
+Bomboclat
+=======
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Team  page</h1>
+<p>Common bro is teaming</p>
+<p>Copying is</p>
+</body>
+</html>
+
+
+
+>>>>>>> Stashed changes
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ vim team.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both added:      team.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git add team.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   team.html
+
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git reset --hard HEAD
+HEAD is now at 0dfe2f7 Commiting the old files from stash
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash
+No local changes to save
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git checkout stash@{2} -- home.html
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git checkout stash@{1} -- about.html
+error: pathspec 'about.html' did not match any file(s) known to git
+
+HP@ian MINGW32 ~/Bundle1 (dev)
+$ git stash list
+stash@{0}: On dev: Stashing the changes of the twam html live
+stash@{1}: On dev: Stashing the changes of the home html
+stash@{2}: WIP on dev: 7933eab Adding Bundle 1 first commit
+```
 #Bundle 2 Exercise 1
 ```bash
 git checkout -b ft/bundle-2
