@@ -1,0 +1,70 @@
+```bash
+ git pull
+Already up to date.
+
+HP@ian MINGW32 ~/bundle1 (main)
+$ ls
+Bundle-1-/  bundle1.py  index.html  services.html
+
+HP@ian MINGW32 ~/bundle1 (main)
+$ rm -f bundle1.py
+
+HP@ian MINGW32 ~/bundle1 (main)
+$ ls
+Bundle-1-/  index.html  services.html
+
+HP@ian MINGW32 ~/bundle1 (main)
+$ git add --all
+
+HP@ian MINGW32 ~/bundle1 (main)
+$ git commit -m "Removing the py file"
+[main 485d505] Removing the py file
+ 1 file changed, 5 deletions(-)
+ delete mode 100644 bundle1.py
+
+HP@ian MINGW32 ~/bundle1 (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 232 bytes | 116.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:i-ganza007/Bundle-1-.git
+   773953d..485d505  main -> main
+branch 'main' set up to track 'origin/main'.
+
+HP@ian MINGW32 ~/bundle1 (main)
+HP@ian MINGW32 ~/bundle1/git-cafe-exercise (main)
+$ git add --all
+
+HP@ian MINGW32 ~/bundle1/git-cafe-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+HP@ian MINGW32 ~/bundle1/git-cafe-exercise (main)
+$ git commit -m "Changing the content of the index.html"
+[main 4b1f1b1] Changing the content of the index.html
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+HP@ian MINGW32 ~/bundle1/git-cafe-exercise (main)
+$ git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 360 bytes | 360.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:i-ganza007/git-cafe-exercise.git
+   d1d3f9c..4b1f1b1  main -> main
+branch 'main' set up to track 'origin/main'.
+
+```
