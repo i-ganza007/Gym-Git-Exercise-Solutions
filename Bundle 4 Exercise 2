@@ -1,0 +1,149 @@
+```bash
+HP@ian MINGW32 ~ (main)
+$ cd bundle1
+
+HP@ian MINGW32 ~/bundle1 (ft/squashing)
+$ ls
+Bundle-1-/  bundle1.py  home.html  services.html
+
+HP@ian MINGW32 ~/bundle1 (ft/squashing)
+$ git checkout dev
+Switched to branch 'dev'
+Your branch is up to date with 'origin/dev'.
+
+HP@ian MINGW32 ~/bundle1 (dev)
+$ git checkout ft.squashing
+error: pathspec 'ft.squashing' did not match any file(s) known to git
+
+HP@ian MINGW32 ~/bundle1 (dev)
+$ git checkout ft/squashing
+Switched to branch 'ft/squashing'
+
+HP@ian MINGW32 ~/bundle1 (ft/squashing)
+$ git checkout ft/footer
+Switched to branch 'ft/footer'
+Your branch is up to date with 'origin/ft/footer'.
+
+HP@ian MINGW32 ~/bundle1 (ft/footer)
+$ git log
+commit 97ed215c0716bcd0c982c0f8adb47579fced2c8b (HEAD -> ft/footer, origin/ft/footer)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Wed Dec 18 12:07:18 2024 +0200
+
+    Adding footer new
+
+commit 14d32e45542a8d8e7cc090b0cf18164add56ad37
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Wed Dec 18 12:03:33 2024 +0200
+
+    Adding footer file
+
+commit b0d9de1e3d0950170c3be87f55dcd419fdbc56c5 (git-copy/main, main, ft/squashing)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Wed Dec 18 11:52:27 2024 +0200
+
+    Adding new feature
+
+commit afdfa98339e39c955be727c0218e75c4118c8bbf (origin/main)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Wed Dec 18 11:48:52 2024 +0200
+
+
+HP@ian MINGW32 ~/bundle1 (ft/footer)
+$
+
+HP@ian MINGW32 ~/bundle1 (ft/footer)
+$ git checkout ft/squashing
+Switched to branch 'ft/squashing'
+
+HP@ian MINGW32 ~/bundle1 (ft/squashing)
+$ git merge --squash ft/footer
+Updating b0d9de1..97ed215
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+ create mode 100644 footer.html
+
+HP@ian MINGW32 ~/bundle1 (ft/squashing)
+$ git log
+commit b0d9de1e3d0950170c3be87f55dcd419fdbc56c5 (HEAD -> ft/squashing, git-copy/main, main)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Wed Dec 18 11:52:27 2024 +0200
+
+    Adding new feature
+
+commit afdfa98339e39c955be727c0218e75c4118c8bbf (origin/main)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Wed Dec 18 11:48:52 2024 +0200
+
+    Adding new feature
+
+commit df44549af65db1d8b84c7cced3b62325dd1cdbfa
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Wed Dec 18 10:09:49 2024 +0200
+
+    Making changes to services and pushing with the main
+
+commit 19b6199ab91fe9e6882e5263e264dfd78a2ca1d7
+Merge: df72430 fa5a39a
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 12:04:50 2024 +0200
+
+    Merge branch 'ft/service-redesign'
+
+commit fa5a39a64540004ef8d0e78f17d1e5d758516a71 (ft/service-redesign)
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 11:59:07 2024 +0200
+
+    Commited to this branch to change stuff
+
+commit df724301097f022bb66cca7678e26b51b954eccc
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 11:50:49 2024 +0200
+
+    Commiting from the main branch of the Bundle 2 Exercise 2
+
+commit 843c615fbad5ec9e92334e467521a92183365d84
+Author: i-ganza007 <i.ganza@alustudent.com>
+Date:   Tue Dec 17 11:41:32 2024 +0200
+
+    Adding changes to the services for for bundle 2 exercise 2
+
+commit 7dce98b07ada60810c18f8fb714e475dd745d691
+Merge: 7933eab 684b1d8
+Author: Bienvenu Cyuzuzo <cbienvenu007@gmail.com>
+Date:   Tue Dec 17 11:20:07 2024 +0200
+
+    Merge pull request #1 from i-ganza007/ft/bundle-2
+
+
+HP@ian MINGW32 ~/bundle1 (ft/squashing)
+$
+
+HP@ian MINGW32 ~/bundle1 (ft/squashing)
+$ git commit -m "footer changes squashing"
+[ft/squashing 1381628] footer changes squashing
+ 1 file changed, 12 insertions(+)
+ create mode 100644 footer.html
+
+HP@ian MINGW32 ~/bundle1 (ft/squashing)
+$ git push origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 405 bytes | 81.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/i-ganza007/Bundle-1-/pull/new/ft/squashing
+remote:
+To github.com:i-ganza007/Bundle-1-.git
+ * [new branch]      ft/squashing -> ft/squashing
+
+HP@ian MINGW32 ~/bundle1 (ft/squashing)
+$
+
+```
