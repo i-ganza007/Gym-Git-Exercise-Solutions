@@ -1,0 +1,288 @@
+```bash
+HP@ian MINGW32 ~/Bundle1 (ft/home-page-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ls
+Bundle-1-/  bundle1.py  services.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git remote git copy git@github.com:i-ganza007/
+error: unknown subcommand: `git'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>r=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto |
+   or: git remote [-v | --verbose] show [-n] <na
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p |
+   or: git remote set-branches [--add] <name> <b
+   or: git remote get-url [--push] [--all] <name
+   or: git remote set-url [--push] <name> <newur
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be pl
+
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ^C
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git remote add git copy git@github.com:i-ganza
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branc
+    --tags                import all tags and as
+                          or do not fetch any ta
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mir
+
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git remote add git copy https://github.com/i-g
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branc
+    --tags                import all tags and as
+                          or do not fetch any ta
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mir
+
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ^C
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git remote add git-copy git@github.com:i-ganza
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git remote
+git-copy
+origin
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ls
+Bundle-1-/  bundle1.py  services.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ls
+Bundle-1-/  bundle1.py  services.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ cat home.html
+cat: home.html: No such file or directory
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git stash
+No local changes to save
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git stash list
+stash@{0}: On dev: Stashing the changes of the t
+stash@{1}: On dev: Stashing the changes of the h
+stash@{2}: WIP on dev: 7933eab Adding Bundle 1 f
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ^C
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git stash pop stash@{1}
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unsta
+        new file:   home.html
+
+Dropped stash@{1} (bfe1341870b2fa91cdb6ee4870edd
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ls
+Bundle-1-/  bundle1.py  home.html  services.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ cat home.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Home page</h1>
+<p>Common bro is lame</p>
+<p>Copying is random</p>
+</body>
+</html>
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ vim home.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git add --all
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unsta
+        new file:   home.html
+
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ vim home.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unsta
+        new file:   home.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will b
+  (use "git restore <file>..." to discard change
+        modified:   home.html
+
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git status --add
+error: unknown option `add'
+usage: git status [<options>] [--] [<pathspec>..
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch informatio
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/beh
+    --porcelain[=<version>]
+                          machine-readable outpu
+    --long                show status in long fo
+    -z, --null            terminate entries with
+    -u, --untracked-files[=<mode>]
+                          show untracked files, fault: all)
+    --ignored[=<mode>]    show ignored files, op no. (Default: traditional)
+    --ignore-submodules[=<when>]
+                          ignore changes to submntracked. (Default: all)
+    --column[=<style>]    list untracked files i
+    --no-renames          do not detect renames
+    -M, --find-renames[=<n>]
+                          detect renames, option
+
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git status --short
+AM home.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git commit -m "Adding new feature"
+[main afdfa98] Adding new feature
+ 1 file changed, 12 insertions(+)
+ create mode 100644 home.html
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 471 bytes | 117.00
+Total 3 (delta 0), reused 0 (delta 0), pack-reus
+To github.com:i-ganza007/Bundle-1-.git
+   df44549..afdfa98  main -> main
+branch 'main' set up to track 'origin/main'.
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git push git-copy
+To github.com:i-ganza007/Gym-Git-Exercises.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:i
+hint: Updates were rejected because the remote c
+hint: not have locally. This is usually caused b
+hint: to the same ref. You may want to first int
+hint: (e.g., 'git pull ...') before pushing agai
+hint: See the 'Note about fast-forwards' in 'git
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git push git-copy main
+To github.com:i-ganza007/Gym-Git-Exercises.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:i
+hint: Updates were rejected because the remote c
+hint: not have locally. This is usually caused b
+hint: to the same ref. You may want to first int
+hint: (e.g., 'git pull ...') before pushing agai
+hint: See the 'Note about fast-forwards' in 'git
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ ^C
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git fetch git-copy
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 1.51 KiB | 49.00 KiB/s, done.
+From github.com:i-ganza007/Gym-Git-Exercises
+ * [new branch]      main       -> git-copy/main
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git merge git-copy/main
+fatal: refusing to merge unrelated histories
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git add --all
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git commit -m "Adding new feature"
+[main b0d9de1] Adding new feature
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git push git-copy
+To github.com:i-ganza007/Gym-Git-Exercises.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'github.com:i-ganza007/Gym-Git-Exercises.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git push git-copy main
+To github.com:i-ganza007/Gym-Git-Exercises.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'github.com:i-ganza007/Gym-Git-Exercises.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+HP@ian MINGW32 ~/Bundle1 (main)
+$ git push git-copy main --force
+Enumerating objects: 28, done.
+Counting objects: 100% (28/28), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (27/27), done.
+Writing objects: 100% (28/28), 3.46 KiB | 885.00 KiB/s, done.
+Total 28 (delta 13), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (13/13), done.
+To github.com:i-ganza007/Gym-Git-Exercises.git
+ + 6d45b82...b0d9de1 main -> main (forced update)
+
+```
